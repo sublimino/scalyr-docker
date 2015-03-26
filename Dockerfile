@@ -2,13 +2,11 @@ FROM debian:latest
 
 RUN \
     apt-get update && \
-    apt-get -y install apt-transport-https wget procps
-
-ENV SCALYR_API_KEY your-key-here
-
-RUN \
+    apt-get -y install apt-transport-https wget procps && \
     cd /tmp && \
     wget --no-check-certificate https://www.scalyr.com/scalyr-repo/stable/latest/install-scalyr-agent-2.sh
+
+ENV SCALYR_API_KEY your-key-here
 
 RUN \
     cd /tmp && \
