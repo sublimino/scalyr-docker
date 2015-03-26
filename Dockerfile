@@ -14,7 +14,7 @@ RUN \
     cd /tmp && \
     bash ./install-scalyr-agent-2.sh --set-api-key "${SCALYR_API_KEY}" && \
     chown daemon:daemon /etc/scalyr-agent-2 /var/log/scalyr-agent-2 /var/lib/scalyr-agent-2 -R && \
-    sed "/logs: \[/a\\\t{ path: \"/var/log/host/journal\", attributes: {parser: \"systemLog\"} }}" -i /etc/scalyr-agent-2/agent.json && \
+    sed "/logs: \[/a\\\t{ path: \"/var/log/host/journal\", attributes: {parser: \"systemLog\"} }" -i /etc/scalyr-agent-2/agent.json && \
     cat /etc/scalyr-agent-2/agent.json
 
 USER daemon
